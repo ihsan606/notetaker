@@ -1,11 +1,7 @@
 import { useState } from "react";
-import { RouterOutputs } from "~/utils/api";
-import ReactMarkdown from "react-markdown";
+import type { RouterOutputs } from "~/utils/api";
 import CodeMirror from "@uiw/react-codemirror";
-import { langs, loadLanguage } from "@uiw/codemirror-extensions-langs";
-import {
-  tokyoNightStorm,
-} from "@uiw/codemirror-theme-tokyo-night-storm";
+import { tokyoNightStorm } from "@uiw/codemirror-theme-tokyo-night-storm";
 type Note = RouterOutputs["note"]["getAll"][0];
 export const NoteCard = ({
   note,
@@ -18,7 +14,7 @@ export const NoteCard = ({
 
   return (
     <>
-      <div className="border-3 card my-2 border border-gray-200">
+      <div className="border-3 card border border-gray-200">
         <div className="card-body">
           <div
             className={`collapse-arrow ${
@@ -30,6 +26,7 @@ export const NoteCard = ({
             <div className="collapse-content">
               <article className="prose lg:prose-xl">
                 <CodeMirror
+                  aria-disabled
                   theme={tokyoNightStorm}
                   value={note.content}
                   width="100%"
@@ -41,6 +38,12 @@ export const NoteCard = ({
               </article>
             </div>
           </div>
+          <div className=" mx-3 flex justify-end">
+            <button onClick={onDelete} className="btn btn-warning btn-xs">
+              Delete
+            </button>
+          </div>
+
         </div>
       </div>
     </>

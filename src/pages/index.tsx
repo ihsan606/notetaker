@@ -21,9 +21,8 @@ const Home: NextPage = (props) => {
         <Header />
         {sessionData?.user && <Content />}
         {!sessionData && (
-          <div className="mockup-window mx-5 my-5 border bg-base-300">
-            <div className="flex justify-center bg-base-200 px-4 py-16">
-              <div className="mockup-code">
+          <div className="mockup-window mx-5 my-5 w-screen h-full border bg-base-300">
+            <div className="pl-10 pt-10 bg-base-200 pb-60">
                 <pre data-prefix="$">
                   <code>npm i Notejs</code>
                 </pre>
@@ -44,7 +43,6 @@ const Home: NextPage = (props) => {
                     Signin Here !
                   </button>
                 </pre>
-              </div>
             </div>
           </div>
         )}

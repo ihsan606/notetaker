@@ -1,9 +1,8 @@
 import { useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
-import { langs, loadLanguage } from "@uiw/codemirror-extensions-langs";
+import { langs } from "@uiw/codemirror-extensions-langs";
 import {
   tokyoNightStorm,
-  tokyoNightStormInit,
 } from "@uiw/codemirror-theme-tokyo-night-storm";
 
 export const NoteEditor = ({
@@ -16,7 +15,7 @@ export const NoteEditor = ({
 
   return (
     <>
-      <div className="card mt-1 border border-gray-100 bg-base-100 shadow-xl">
+      <div className="card mt-1 border-2 border-gray-100 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title mb-2">
             <input

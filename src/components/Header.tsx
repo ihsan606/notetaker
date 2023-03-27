@@ -4,18 +4,20 @@ const Header = () => {
   const { data: sessionData } = useSession();
   return (
     <>
-      <div className="navbar bg-sky-600">
+      <div className="navbar bg-slate-900 dark:bg-sky-600">
         <div className="flex-1">
-          <a className="btn-ghost btn text-xl normal-case">
+          <a className="btn-ghost btn text-xl normal-case text-success">
             {" "}
-            {sessionData?.user.name}
+            {`Welcome To Notejs, ${
+              sessionData?.user.name?.split(" ")[0] || ""
+            }`}
           </a>
           {!sessionData?.user && (
             <div className="">
               <div className="flex justify-center py-1">
-              <pre data-prefix=">" className="text-success ">
-                 <code> Notejs</code>
-               </pre>
+                <pre data-prefix=">" className="text-success ">
+                  <code> Notejs</code>
+                </pre>
               </div>
             </div>
           )}
